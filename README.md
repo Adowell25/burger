@@ -4,7 +4,7 @@
 
 Fullstack application that takes user input and manipulates the data within the database.
 
-![](public/assets/images/gb.png)
+![](assets/images/gb.png)
 
 
 # The run down
