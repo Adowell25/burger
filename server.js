@@ -1,9 +1,11 @@
 var express = require("express");
+
 var PORT = process.env.PORT || 3000;
+
 var app = express();
 
 
-//display static content from "public" directory in the application directory
+//Serve static content from "public" directory in the application directory
 app.use(express.static("public"));
 
 // Parse application body as JSON
@@ -21,7 +23,7 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/burger_controllers");
+var routes = require("./controllers/burgers_controllers");
 
 app.use(routes);
 

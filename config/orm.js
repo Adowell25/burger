@@ -2,7 +2,7 @@
 var connection = require("./connection");
 
 var orm = {
-    select: (table, cb) => {
+    all: (table, cb) => {
         var query = `SELECT * FROM ??`;
 
         connection.query(query, [table], (err, results) => {
@@ -29,17 +29,6 @@ var orm = {
         var updateQuery = `UPDATE ?? SET ?? = ? WHERE ?? = ?`
 
         connection.query(updateQuery, [table, column, newVal, whereCol, whereVal], (err, result) => {
-            if (err) {
-                throw err;
-            }
-            console.log(result);
-        });
-    },
-
-    delete: (table, column, value) => {
-        let deleteQuery = `DELETE FROM ?? WHERE ?? = ?`
-
-        connection.query(deleteQuery, [table, column, value], (err, result) => {
             if (err) {
                 throw err;
             }
